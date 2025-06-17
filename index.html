@@ -4,61 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sunrest Membership Application</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
+      background: #f4f4f4;
       font-family: Arial, sans-serif;
       padding: 20px;
-      background: #f4f4f4;
     }
     .container {
       background: white;
-      padding: 20px;
-      max-width: 900px;
+      padding: 30px;
+      max-width: 960px;
       margin: auto;
       border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    img.logo {
-      height: 130px;
+    .logo {
+      height: 100px;
+      display: block;
+      margin: 0 auto 20px auto;
     }
     h2 {
       text-align: center;
-    }
-    .section {
-      margin-top: 20px;
-    }
-    label {
-      display: block;
-      margin-top: 10px;
-    }
-    input, textarea, select {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: center;
+      margin-bottom: 30px;
     }
     .submit-btn {
-      background: #f58220;
+      background-color: #f58220;
       color: white;
-      padding: 10px 20px;
-      border: none;
-      margin-top: 20px;
-      cursor: pointer;
-      font-size: 16px;
+      font-weight: bold;
     }
     .submit-btn:hover {
-      background: #d26e17;
+      background-color: #d26e17;
+    }
+    .form-section {
+      margin-bottom: 40px;
     }
     .terms {
       font-size: 14px;
+    }
+    .disabled-section input,
+    .disabled-section select,
+    .disabled-section textarea {
+      background-color: #eee !important;
+      pointer-events: none;
+    }
+    .disclaimer {
+      color: #d9534f;
+      font-weight: bold;
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
+    table input {
+      width: 100%;
     }
   </style>
 </head>
@@ -67,98 +64,98 @@
     <img src="img/logo.jpg" alt="Sunrest Logo" class="logo" />
     <h2>Membership Application Form</h2>
 
-    <form action="https://formspree.io/f/xrbklznn" method="POST">
-      <div class="section">
-        <label>Group Scheme</label>
-        <input type="text" name="group_scheme" required />
-
-        <label>Membership Number</label>
-        <input type="text" name="membership_number" />
-
-        <label>Member/Family Sum Assured</label>
-        <input type="text" name="sum_assured" />
-
-        <label>Premium Per Month</label>
-        <input type="text" name="monthly_premium" />
+    <form method="POST" action="submit.php">
+      <div class="form-section disabled-section">
+        <h4>Policy Details</h4>
+        <p class="disclaimer">For official use only</p>
+        <div class="row">
+          <div class="col-md-6">
+            <label>Group Scheme</label>
+            <input type="text" name="group_scheme" class="form-control" />
+          </div>
+          <div class="col-md-6">
+            <label>Membership Number</label>
+            <input type="text" name="membership_number" class="form-control" />
+          </div>
+          <div class="col-md-6 mt-3">
+            <label>Member/Family Sum Assured</label>
+            <input type="text" name="sum_assured" class="form-control" />
+          </div>
+          <div class="col-md-6 mt-3">
+            <label>Premium Per Month</label>
+            <input type="text" name="monthly_premium" class="form-control" />
+          </div>
+        </div>
       </div>
 
-      <div class="section">
-        <h3>Principal Member Details</h3>
-        <label>Full Name</label>
-        <input type="text" name="full_name" required />
-
-        <label>Date of Birth</label>
-        <input type="date" name="dob" />
-
-        <label>ID Number</label>
-        <input type="text" name="id_number" required />
-
-        <label>Occupation</label>
-        <input type="text" name="occupation" />
-
-        <label>Physical Address</label>
-        <textarea name="address"></textarea>
-
-        <label>Phone Number</label>
-        <input type="tel" name="phone" />
-
-        <label>Email Address</label>
-        <input type="email" name="email" />
+      <div class="form-section">
+        <h4>Principal Member Details</h4>
+        <div class="row">
+          <div class="col-md-6">
+            <label>Full Name</label>
+            <input type="text" name="full_name" class="form-control" required />
+          </div>
+          <div class="col-md-6">
+            <label>Date of Birth</label>
+            <input type="date" name="dob" class="form-control" />
+          </div>
+          <div class="col-md-6 mt-3">
+            <label>ID Number</label>
+            <input type="text" name="id_number" class="form-control" required />
+          </div>
+          <div class="col-md-6 mt-3">
+            <label>Occupation</label>
+            <input type="text" name="occupation" class="form-control" />
+          </div>
+          <div class="col-md-12 mt-3">
+            <label>Physical Address</label>
+            <textarea name="address" class="form-control"></textarea>
+          </div>
+          <div class="col-md-6 mt-3">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" class="form-control" />
+          </div>
+          <div class="col-md-6 mt-3">
+            <label>Email Address</label>
+            <input type="email" name="email" class="form-control" />
+          </div>
+        </div>
       </div>
 
-      <div class="section">
-        <h3>Next of Kin</h3>
-        <label>Full Name</label>
-        <input type="text" name="nok_name" />
-
-        <label>ID Number</label>
-        <input type="text" name="nok_id" />
-
-        <label>Phone Number</label>
-        <input type="tel" name="nok_phone" />
-
-        <label>Gender</label>
-        <select name="nok_gender">
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-        </select>
+      <div class="form-section">
+        <h4>Members to Be Covered</h4>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead class="table-light">
+              <tr>
+                <th>Member Category</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Gender</th>
+                <th>D.O.B</th>
+                <th>ID Number</th>
+                <th>Monthly Premium</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Principal</td><td><input name="p_name"></td><td><input name="p_surname"></td><td><input name="p_gender"></td><td><input name="p_dob" type="date"></td><td><input name="p_id"></td><td><input name="p_premium"></td></tr>
+              <tr><td>Spouse</td><td><input name="spouse_name"></td><td><input name="spouse_surname"></td><td><input name="spouse_gender"></td><td><input name="spouse_dob" type="date"></td><td><input name="spouse_id"></td><td><input name="spouse_premium"></td></tr>
+              <tr><td>Child 1</td><td><input name="child1_name"></td><td><input name="child1_surname"></td><td><input name="child1_gender"></td><td><input name="child1_dob" type="date"></td><td><input name="child1_id"></td><td><input name="child1_premium"></td></tr>
+              <tr><td>Child 2</td><td><input name="child2_name"></td><td><input name="child2_surname"></td><td><input name="child2_gender"></td><td><input name="child2_dob" type="date"></td><td><input name="child2_id"></td><td><input name="child2_premium"></td></tr>
+              <tr><td>Child 3</td><td><input name="child3_name"></td><td><input name="child3_surname"></td><td><input name="child3_gender"></td><td><input name="child3_dob" type="date"></td><td><input name="child3_id"></td><td><input name="child3_premium"></td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
-      <div class="section">
-        <h3>Members to Be Covered</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Member Category</th>
-              <th>Name</th>
-              <th>Surname</th>
-              <th>Gender</th>
-              <th>D.O.B</th>
-              <th>ID Number</th>
-              <th>Monthly Premium</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Principal</td><td><input name="p_name"></td><td><input name="p_surname"></td><td><input name="p_gender"></td><td><input name="p_dob" type="date"></td><td><input name="p_id"></td><td><input name="p_premium"></td></tr>
-            <tr><td>Spouse</td><td><input name="spouse_name"></td><td><input name="spouse_surname"></td><td><input name="spouse_gender"></td><td><input name="spouse_dob" type="date"></td><td><input name="spouse_id"></td><td><input name="spouse_premium"></td></tr>
-            <tr><td>Child 1</td><td><input name="child1_name"></td><td><input name="child1_surname"></td><td><input name="child1_gender"></td><td><input name="child1_dob" type="date"></td><td><input name="child1_id"></td><td><input name="child1_premium"></td></tr>
-            <tr><td>Child 2</td><td><input name="child2_name"></td><td><input name="child2_surname"></td><td><input name="child2_gender"></td><td><input name="child2_dob" type="date"></td><td><input name="child2_id"></td><td><input name="child2_premium"></td></tr>
-            <tr><td>Child 3</td><td><input name="child3_name"></td><td><input name="child3_surname"></td><td><input name="child3_gender"></td><td><input name="child3_dob" type="date"></td><td><input name="child3_id"></td><td><input name="child3_premium"></td></tr>
-            <tr><td>Child 4</td><td><input name="child4_name"></td><td><input name="child4_surname"></td><td><input name="child4_gender"></td><td><input name="child4_dob" type="date"></td><td><input name="child4_id"></td><td><input name="child4_premium"></td></tr>
-            <tr><td>Beneficiary 1</td><td><input name="b1_name"></td><td><input name="b1_surname"></td><td><input name="b1_gender"></td><td><input name="b1_dob" type="date"></td><td><input name="b1_id"></td><td><input name="b1_premium"></td></tr>
-            <tr><td>Beneficiary 2</td><td><input name="b2_name"></td><td><input name="b2_surname"></td><td><input name="b2_gender"></td><td><input name="b2_dob" type="date"></td><td><input name="b2_id"></td><td><input name="b2_premium"></td></tr>
-            <tr><td>Beneficiary 3</td><td><input name="b3_name"></td><td><input name="b3_surname"></td><td><input name="b3_gender"></td><td><input name="b3_dob" type="date"></td><td><input name="b3_id"></td><td><input name="b3_premium"></td></tr>
-            <tr><td>Beneficiary 4</td><td><input name="b4_name"></td><td><input name="b4_surname"></td><td><input name="b4_gender"></td><td><input name="b4_dob" type="date"></td><td><input name="b4_id"></td><td><input name="b4_premium"></td></tr>
-            <tr><td>Beneficiary 5</td><td><input name="b5_name"></td><td><input name="b5_surname"></td><td><input name="b5_gender"></td><td><input name="b5_dob" type="date"></td><td><input name="b5_id"></td><td><input name="b5_premium"></td></tr>
-          </tbody>
-        </table>
+      <div class="form-check form-section">
+        <input type="checkbox" class="form-check-input" id="agree" name="agree_terms" required />
+        <label for="agree" class="form-check-label">I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a></label>
       </div>
 
-      <div class="section terms">
-        <input type="checkbox" name="agree_terms" required /> I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a>
+      <div class="text-center">
+        <button type="submit" class="btn submit-btn">Submit Application</button>
       </div>
-
-      <button type="submit" class="submit-btn">Submit Application</button>
     </form>
   </div>
 </body>
