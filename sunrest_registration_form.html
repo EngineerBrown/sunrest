@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunrest Membership Application</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+      border-radius: 10px;
+    }
+    img.logo {
+      height: 80px;
+    }
+    h2 {
+      text-align: center;
+    }
+    .section {
+      margin-top: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    .submit-btn {
+      background: #f58220;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      margin-top: 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .submit-btn:hover {
+      background: #d26e17;
+    }
+    .terms {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="sunrest-logo.png" alt="Sunrest Logo" class="logo" />
+    <h2>Membership Application Form</h2>
+
+    <form action="https://formspree.io/f/yourFormID" method="POST">
+      <div class="section">
+        <label>Group Scheme</label>
+        <input type="text" name="group_scheme" required />
+
+        <label>Membership Number</label>
+        <input type="text" name="membership_number" />
+
+        <label>Member/Family Sum Assured</label>
+        <input type="text" name="sum_assured" />
+
+        <label>Premium Per Month</label>
+        <input type="text" name="monthly_premium" />
+      </div>
+
+      <div class="section">
+        <h3>Principal Member Details</h3>
+        <label>Full Name</label>
+        <input type="text" name="full_name" required />
+
+        <label>Date of Birth</label>
+        <input type="date" name="dob" />
+
+        <label>ID Number</label>
+        <input type="text" name="id_number" required />
+
+        <label>Occupation</label>
+        <input type="text" name="occupation" />
+
+        <label>Physical Address</label>
+        <textarea name="address"></textarea>
+
+        <label>Phone Number</label>
+        <input type="tel" name="phone" />
+
+        <label>Email Address</label>
+        <input type="email" name="email" />
+      </div>
+
+      <div class="section">
+        <h3>Next of Kin</h3>
+        <label>Full Name</label>
+        <input type="text" name="nok_name" />
+
+        <label>ID Number</label>
+        <input type="text" name="nok_id" />
+
+        <label>Phone Number</label>
+        <input type="tel" name="nok_phone" />
+
+        <label>Gender</label>
+        <select name="nok_gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+
+      <div class="section">
+        <h3>Members to Be Covered</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Member Category</th>
+              <th>Name</th>
+              <th>Surname</th>
+              <th>Gender</th>
+              <th>D.O.B</th>
+              <th>ID Number</th>
+              <th>Monthly Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Principal</td><td><input name="p_name"></td><td><input name="p_surname"></td><td><input name="p_gender"></td><td><input name="p_dob" type="date"></td><td><input name="p_id"></td><td><input name="p_premium"></td></tr>
+            <tr><td>Spouse</td><td><input name="spouse_name"></td><td><input name="spouse_surname"></td><td><input name="spouse_gender"></td><td><input name="spouse_dob" type="date"></td><td><input name="spouse_id"></td><td><input name="spouse_premium"></td></tr>
+            <tr><td>Child 1</td><td><input name="child1_name"></td><td><input name="child1_surname"></td><td><input name="child1_gender"></td><td><input name="child1_dob" type="date"></td><td><input name="child1_id"></td><td><input name="child1_premium"></td></tr>
+            <tr><td>Child 2</td><td><input name="child2_name"></td><td><input name="child2_surname"></td><td><input name="child2_gender"></td><td><input name="child2_dob" type="date"></td><td><input name="child2_id"></td><td><input name="child2_premium"></td></tr>
+            <tr><td>Child 3</td><td><input name="child3_name"></td><td><input name="child3_surname"></td><td><input name="child3_gender"></td><td><input name="child3_dob" type="date"></td><td><input name="child3_id"></td><td><input name="child3_premium"></td></tr>
+            <tr><td>Child 4</td><td><input name="child4_name"></td><td><input name="child4_surname"></td><td><input name="child4_gender"></td><td><input name="child4_dob" type="date"></td><td><input name="child4_id"></td><td><input name="child4_premium"></td></tr>
+            <tr><td>Beneficiary 1</td><td><input name="b1_name"></td><td><input name="b1_surname"></td><td><input name="b1_gender"></td><td><input name="b1_dob" type="date"></td><td><input name="b1_id"></td><td><input name="b1_premium"></td></tr>
+            <tr><td>Beneficiary 2</td><td><input name="b2_name"></td><td><input name="b2_surname"></td><td><input name="b2_gender"></td><td><input name="b2_dob" type="date"></td><td><input name="b2_id"></td><td><input name="b2_premium"></td></tr>
+            <tr><td>Beneficiary 3</td><td><input name="b3_name"></td><td><input name="b3_surname"></td><td><input name="b3_gender"></td><td><input name="b3_dob" type="date"></td><td><input name="b3_id"></td><td><input name="b3_premium"></td></tr>
+            <tr><td>Beneficiary 4</td><td><input name="b4_name"></td><td><input name="b4_surname"></td><td><input name="b4_gender"></td><td><input name="b4_dob" type="date"></td><td><input name="b4_id"></td><td><input name="b4_premium"></td></tr>
+            <tr><td>Beneficiary 5</td><td><input name="b5_name"></td><td><input name="b5_surname"></td><td><input name="b5_gender"></td><td><input name="b5_dob" type="date"></td><td><input name="b5_id"></td><td><input name="b5_premium"></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section terms">
+        <input type="checkbox" name="agree_terms" required /> I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+  </div>
+</body>
+</html>
